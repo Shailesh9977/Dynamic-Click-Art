@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0c10;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hint {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  color: #66fcf1;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  pointer-events: none;
+  animation: growAndFade 4s ease-out forwards;
+}
+
+/* --- Shapes --- */
+.shape.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.shape.square {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.shape.rectangle {
+  width: 90px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.shape.triangle {
+  width: 70px;
+  height: 70px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  padding-top: 20px;
+}
+
+.shape.pyramid {
+  width: 70px;
+  height: 70px;
+  clip-path: polygon(50% 0%, 100% 70%, 50% 100%, 0% 70%);
+  padding-top: 10px;
+}
+
+.shape.cone {
+  width: 70px;
+  height: 70px;
+  clip-path: polygon(50% 0%, 100% 85%, 85% 100%, 15% 100%, 0% 85%);
+  padding-top: 15px;
+}
+
+.shape-text {
+  font-size: 11px;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+}
+
+@keyframes growAndFade {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.8) rotate(15deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.8) rotate(30deg);
+    opacity: 0;
+  }
+}
